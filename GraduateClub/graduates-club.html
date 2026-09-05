@@ -337,7 +337,7 @@
     <div class="hero">
       <div class="kicker" data-i18n="heroKicker">— الفصل الدراسي الحالي —</div>
       <h1 data-i18n="heroTitle">سجّل انضمامك لنادي الخريجين</h1>
-      <p data-i18n="heroDesc">مساحة تجمع طلاب السنة الأخيرة قبل التخرج، للتواصل والفعاليات وبناء شبكة الخريجين.</p>
+      <p data-i18n="heroDesc">مساحة تجمع طلاب السنتين الأخيرتين من جميع التخصصات للتواصل والفعاليات وبناء شبكة الخريجين.</p>
     </div>
 
     <div class="card">
@@ -364,7 +364,7 @@
         <div class="field">
           <label for="year" data-i18n="labelYear">السنة الدراسية</label>
           <select id="year" required></select>
-          <div class="hint" data-i18n="hintYear">التسجيل مقتصر على السنة الأخيرة فقط.</div>
+          <div class="hint" data-i18n="hintYear">التسجيل متاح للسنتين الثالثة والرابعة، وللسنتين الرابعة والخامسة لطلاب العمارة.</div>
         </div>
         <div class="field">
           <label for="section" data-i18n="labelSection">القسم المفضل</label>
@@ -434,13 +434,13 @@ const T = {
     navHome:'الرئيسية', navSections:'الأقسام', navRegister:'التسجيل',
     heroKicker:'— الفصل الدراسي الحالي —',
     heroTitle:'سجّل انضمامك لنادي الخريجين',
-    heroDesc:'مساحة تجمع طلاب السنة الأخيرة قبل التخرج، للتواصل والفعاليات وبناء شبكة الخريجين.',
-    noticeText:'التسجيل هذا الفصل متاح حصرياً لطلاب <strong>السنة الأخيرة</strong> في كليات الأعمال والهندسة والقانون.',
+    heroDesc:'مساحة تجمع طلاب السنتين الأخيرتين من جميع التخصصات للتواصل والفعاليات وبناء شبكة الخريجين.',
+    noticeText:'التسجيل متاح لطلاب <strong>السنتين الأخيرتين من جميع التخصصات</strong>: الثالثة والرابعة، والرابعة والخامسة لطلاب العمارة.',
     sectionsTitle:'أقسام النادي',
     sectionsDesc:'خمسة أقسام تدير عمل النادي، كل واحد مسؤول عن جانب مختلف من تجربة الخريجين.',
     labelName:'الاسم الكامل', labelPhone:'رقم الجوال (واتساب)',
     labelCollege:'الكلية', labelMajor:'التخصص', labelYear:'السنة الدراسية', labelSection:'القسم المفضل',
-    hintYear:'التسجيل مقتصر على السنة الأخيرة فقط.',
+    hintYear:'التسجيل متاح للسنتين الثالثة والرابعة، وللسنتين الرابعة والخامسة لطلاب العمارة.',
     sectionPlaceholder:'اختر القسم الذي يهمك الانضمام له',
     submitBtn:'تسجيل', submitBtnLoading:'جاري التسجيل...',
     successTitle:'تم تسجيلك بنجاح',
@@ -448,7 +448,7 @@ const T = {
     regIdPrefix:'رقم التسجيل: ',
     footerText:'نادي الخريجين — جميع الحقوق محفوظة',
     errRequired:'يرجى تعبئة جميع الحقول قبل التسجيل.',
-    errYear:'عذراً، التسجيل هذا الفصل متاح فقط لطلاب السنة الأخيرة. لا يمكن إكمال التسجيل بسنة دراسية أخرى.',
+    errYear:'عذراً، التسجيل متاح فقط للسنتين الثالثة والرابعة، أو الرابعة والخامسة لطلاب العمارة.',
     errSave:'حدث خطأ أثناء حفظ التسجيل. حاول مرة أخرى.',
     adminDashTitle:'لوحة تسجيلات الخريجين', exitBtn:'خروج',
     modalTitle:'دخول الإدارة', modalDesc:'أدخل كلمة المرور للاطلاع على سجلات التسجيل.',
@@ -466,15 +466,10 @@ const T = {
     },
     yearPlaceholder:'اختر السنة الدراسية',
     yearsDefault:[
-      {v:'1', l:'السنة الأولى'},
-      {v:'2', l:'السنة الثانية'},
       {v:'3', l:'السنة الثالثة'},
       {v:'final', l:'السنة الرابعة (خريج)'}
     ],
     yearsArchitecture:[
-      {v:'1', l:'السنة الأولى'},
-      {v:'2', l:'السنة الثانية'},
-      {v:'3', l:'السنة الثالثة'},
       {v:'4', l:'السنة الرابعة'},
       {v:'final', l:'السنة الخامسة (خريج)'}
     ],
@@ -497,13 +492,13 @@ const T = {
     navHome:'Home', navSections:'Sections', navRegister:'Register',
     heroKicker:'— This Semester —',
     heroTitle:'Join the Graduates Club',
-    heroDesc:'A space for final-year students before graduation — networking, events, and building the alumni community.',
-    noticeText:'Registration this semester is open exclusively to <strong>final-year</strong> students in the Business, Engineering, and Law colleges.',
+    heroDesc:'A community for juniors and seniors across all majors to connect, take part in events, and build their alumni network.',
+    noticeText:'Registration is open to <strong>juniors and seniors across all majors</strong>: third- and fourth-year students, and fourth- and fifth-year Architecture students.',
     sectionsTitle:'Club Sections',
     sectionsDesc:'Five sections run the club, each responsible for a different part of the graduate experience.',
     labelName:'Full name', labelPhone:'Phone number (WhatsApp)',
     labelCollege:'College', labelMajor:'Major', labelYear:'Academic year', labelSection:'Preferred section',
-    hintYear:'Registration is limited to final-year students only.',
+    hintYear:'Open to third- and fourth-year students, and fourth- and fifth-year Architecture students.',
     sectionPlaceholder:'Choose the section you\'d like to join',
     submitBtn:'Register', submitBtnLoading:'Registering...',
     successTitle:'You\'re registered',
@@ -511,7 +506,7 @@ const T = {
     regIdPrefix:'Registration ID: ',
     footerText:'Graduates Club — All rights reserved',
     errRequired:'Please fill in all fields before registering.',
-    errYear:'Sorry, registration this semester is open to final-year students only. Other academic years cannot register.',
+    errYear:'Registration is limited to third- and fourth-year students, or fourth- and fifth-year Architecture students.',
     errSave:'Something went wrong while saving your registration. Please try again.',
     adminDashTitle:'Graduate Registrations Dashboard', exitBtn:'Exit',
     modalTitle:'Admin login', modalDesc:'Enter the password to view registration records.',
@@ -529,15 +524,10 @@ const T = {
     },
     yearPlaceholder:'Select academic year',
     yearsDefault:[
-      {v:'1', l:'First year'},
-      {v:'2', l:'Second year'},
       {v:'3', l:'Third year'},
       {v:'final', l:'Fourth year (Senior)'}
     ],
     yearsArchitecture:[
-      {v:'1', l:'First year'},
-      {v:'2', l:'Second year'},
-      {v:'3', l:'Third year'},
       {v:'4', l:'Fourth year'},
       {v:'final', l:'Fifth year (Senior)'}
     ],
@@ -757,7 +747,7 @@ form.addEventListener('submit', async (e)=>{
     showError(T[lang].errRequired);
     return;
   }
-  if (year !== 'final'){
+  if (year !== 'final' && year !== (isArchitectureSelected() ? '4' : '3')){
     showError(T[lang].errYear);
     return;
   }

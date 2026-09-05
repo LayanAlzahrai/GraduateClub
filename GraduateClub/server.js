@@ -153,7 +153,9 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/api/registrations') {
       const entry = await readBody(req);
       const required = ['fullName', 'phone', 'college', 'majorAr', 'majorEn', 'sectionAr', 'sectionEn'];
-      if (entry.year !== 'final') return send(res, 403, { error: 'Senior students only' });
+      const isArchitecture = entry.college === 'engineering' && entry.majorEn === 'Architecture Program';
+      if (entry.year !== 'final' && entry.year !== (isArchitecture ? '4' : '3'))
+        return send(res, 403, { error: 'Registration is open to juniors and seniors across all majors.' });
       if (required.some(key => !String(entry[key] || '').trim()))
         return send(res, 400, { error: 'Missing required fields' });
 
@@ -162,7 +164,7 @@ const server = http.createServer(async (req, res) => {
         id: 'GC-' + Date.now().toString(36).toUpperCase() + crypto.randomBytes(2).toString('hex').toUpperCase(),
         fullName: String(entry.fullName).trim().slice(0, 120),
         phone: String(entry.phone).trim().slice(0, 30),
-        year: 'final',
+        year: entry.year,
         submittedAt: new Date().toISOString()
       };
       return send(res, 201, await addRegistration(cleanEntry));
